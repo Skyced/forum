@@ -1,0 +1,12 @@
+<div ng-controller="answersController as answersCtrl">
+    <h1 ng-bind="answersCtrl.question.title"></h1><br>
+    <span ng-bind="answersCtrl.messages"></span><br>
+    <label for="answer">Your Answer:</label> <textarea class="form-control" rows="3" ng-model="answersCtrl.newAnswer.answer"></textarea>
+    <label for="detail">Supporting details for your answer:</label> <textarea class="form-control" rows="3" ng-model="answersCtrl.newAnswer.detail"></textarea>
+    <a href="#/"><button class="btn btn-info">Cancel</button></a> <button class="btn btn-primary" ng-click="answersCtrl.addAnswer()">Submit</button>
+</div>
+<style>
+label{
+    vertical-align: top;
+}
+</style>

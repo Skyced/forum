@@ -1,0 +1,22 @@
+<div ng-controller="questionsController as quest">
+    <h1>{{ quest.question.title }}</h1>
+    <h3 ng-bind="quest.question.description"></h3>
+    <br>
+    <div class="answers"ng-repeat="answer in quest.question.answers | orderBy:['-likes', 'created_at']">
+        <span ng-bind="answer.user"></span>:<br>
+        <span ng-bind="answer.answer"></span><br>
+        <span ng-bind="answer.detail"></span><br>
+        <span ng-bind="answer.likes"></span> Likes <button ng-click="quest.addLikes(answer._id)">Like</button>
+        <hr>
+    </div>
+    
+</div>
+<style>
+div{
+    margin-left: 5px
+}
+.answers{
+    margin-left:10px;
+     bottom-border:1px solid black;
+}
+</style>

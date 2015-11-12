@@ -1,0 +1,20 @@
+<div ng-controller="questionsController as questCtrl">
+    Search <input type="text" ng-model="filter_name">
+<table class="table table-hover">
+    <tr>
+        <th>Question</th>
+        <th>Answers</th>
+        <th>Action</th>
+    </tr>
+    <tr ng-repeat="question in questCtrl.questions | filter: filter_name | orderBy:'-created_at' track by $index">
+        <td ng-bind="question.title"></td>
+        <td ng-bind="question.numofanswers"></td>
+        <td><a ng-href="#/questinfo/{{question._id}}">Show</a> <a ng-href="#/answer/{{question._id}}">Answer</a></td>
+    </tr>
+</table>
+</div>
+<style>
+input{
+    margin:10px;
+}
+</style>

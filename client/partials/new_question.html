@@ -1,0 +1,12 @@
+<div ng-controller="questionsController as questCtrl">
+    <h1>New Question</h1><br>
+    <span ng-bind="questCtrl.messages"></span><br>
+    <label for="questions">Question</label> <textarea class="form-control" rows="3" ng-model="questCtrl.newQuestion.question"></textarea><br>
+    <label for="desc">Description</label> <textarea ng-model="questCtrl.newQuestion.description" class="form-control" rows="3"></textarea><br>
+    <button class="btn btn-danger">Cancel</button> <button class="btn btn-success" ng-click="questCtrl.addQuestion()">Submit</button>
+</div>
+<style>
+label{
+    vertical-align: top;
+}
+</style>
